@@ -36,7 +36,8 @@ public class UploadServlet extends HttpServlet {
 		      //Retrieving text from PDF document
 		      String text = pdfStripper.getText(document);
 		      fileName = new File(fileName).getName();
-		      PrintStream o = new PrintStream(new File("D:\\"+fileName+".txt")); 
+		      String FileName =(fileName.substring(0, fileName.length() - 4));
+		      PrintStream o = new PrintStream(new File("D:\\"+FileName+".txt")); 
 		      System.setOut(o); 
 		      System.out.println(text);
 		      //Closing the document
